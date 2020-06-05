@@ -6,7 +6,6 @@ import datetime
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
@@ -19,8 +18,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='userconsent',
             name='date_given',
-            field=models.DateTimeField(
-                default=datetime.datetime(2016, 6, 10, 17, 53, 48, 889808, tzinfo=utc), verbose_name='Date Given'),
+            field=models.DateTimeField(auto_now_add=True, verbose_name='Date Given'),
             preserve_default=False,
         ),
         migrations.AlterField(
